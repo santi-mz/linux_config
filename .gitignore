@@ -1,0 +1,18 @@
+# Letta local state
+.letta/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+credentials.json
+
+# Temporary and editor files
+*.tmp
+*.swp
+*~
+.DS_Store
+Thumbs.db

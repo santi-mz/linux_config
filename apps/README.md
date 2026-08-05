@@ -2,10 +2,9 @@
 
 ## Firefox
 
-This is in my opinion one of the best web browser, it came by default on linux, depending on your preferences, you can install snap or deb package
+Copy [user.js](./user.js) to the Firefox profile shown in `about:profiles`, then restart Firefox.
 
-- Snap: <https://snapcraft.io/firefox>
-- Deb: Execute -> [Script](./brave.sh) `./firefox.bash`
+It disables the fullscreen delay and transitions, shows complete URLs, blocks autoplay, and enables tracking protection.
 
 ## Git-client
 
