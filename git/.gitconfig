@@ -1,0 +1,7 @@
+[user]
+	name = Santiago Mendoza
+	email = santiagoyasno@gmail.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
