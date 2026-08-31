@@ -27,6 +27,27 @@ The script uses `sudo` to install packages, replaces `~/.zshrc` and `~/.p10k.zsh
 
 Log out and back in after it completes so the login-shell change takes effect.
 
+## Migrate an existing NVM setup
+
+Run the migration from a Zsh session where NVM currently provides `node` and
+`npm`:
+
+```bash
+bash terminal/migrate_nvm_to_fnm.sh
+```
+
+The script preserves the active Node.js version and exact versions of global
+packages available through the configured npm registry. It installs a pinned,
+checksum-verified `fnm` release, backs up and atomically updates `~/.zshrc`, and
+validates the result in a clean Zsh session. Linked, aliased, extraneous, or
+noncanonical NVM setups and global npm prefixes outside the managed Node.js
+installation are rejected without replacing the existing shell configuration.
+Before changing anything, it asks you to confirm that the listed global
+packages came from the configured npm registry; `--yes` provides that
+confirmation for an intentional noninteractive run. The script does not delete
+`~/.nvm`; keep that directory until the migrated tools have been verified from
+a new terminal.
+
 ## Application configuration
 
 - [Firefox preferences](apps/README.md): copy `user.js` into the Firefox profile shown in `about:profiles`.
