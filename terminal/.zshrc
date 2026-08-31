@@ -10,7 +10,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for other theme options.
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins for the full plugin list.
-plugins=(git zsh-syntax-highlighting jsontools)
+plugins=(git jsontools zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -18,3 +18,10 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+FNM_INSTALL_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/fnm"
+[[ -d "$FNM_INSTALL_DIR" ]] && export PATH="$FNM_INSTALL_DIR:$PATH"
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+unset FNM_INSTALL_DIR

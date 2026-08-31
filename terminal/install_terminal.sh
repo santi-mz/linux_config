@@ -1,10 +1,18 @@
 #!/bin/bash
-# Fresh-install bootstrap for Zsh + Oh My Zsh + Powerlevel10k + GNOME Terminal.
+# Fresh-install bootstrap for Zsh + Oh My Zsh + Powerlevel10k + fnm + GNOME Terminal.
 set -euo pipefail
 
 echo "[INFO] Installing dependencies..."
 sudo apt update
 sudo apt install -y zsh git curl unzip fonts-powerline tree
+
+echo "[INFO] Installing fnm..."
+FNM_INSTALL_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/fnm"
+if command -v fnm >/dev/null 2>&1 || [[ -x "$FNM_INSTALL_DIR/fnm" ]]; then
+  echo "[INFO] fnm already present, skipping installation."
+else
+  curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+fi
 
 echo "[INFO] Installing Oh My Zsh..."
 OMZ_INSTALLER="$(mktemp)"
