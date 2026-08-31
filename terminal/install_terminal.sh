@@ -13,6 +13,10 @@ if command -v fnm >/dev/null 2>&1 || [[ -x "$FNM_INSTALL_DIR/fnm" ]]; then
 else
   curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 fi
+export PATH="$FNM_INSTALL_DIR:$PATH"
+eval "$(fnm env --shell bash)"
+fnm install --lts --use
+fnm default "$(fnm current)"
 
 echo "[INFO] Installing Oh My Zsh..."
 OMZ_INSTALLER="$(mktemp)"

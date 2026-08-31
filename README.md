@@ -10,7 +10,7 @@ Personal Linux bootstrap configuration for a fresh Ubuntu/Debian desktop with GN
 
 ## Contents
 
-- `terminal/` installs Zsh, Oh My Zsh, Powerlevel10k, fnm, syntax highlighting, JetBrains Mono Nerd Font, the Papirus icon theme (always the latest release), and configures GNOME Terminal.
+- `terminal/` installs Zsh, Oh My Zsh, Powerlevel10k, fnm with the latest Node.js LTS release, syntax highlighting, JetBrains Mono Nerd Font, the Papirus icon theme (always the latest release), and configures GNOME Terminal.
 - `apps/` contains application configuration, including Firefox preferences and Zed settings.
 - `git/` contains a `.gitconfig` template (user identity, default branch, rebase-on-pull).
 - `wallpaper/` stores the wallpaper image and its source link.
